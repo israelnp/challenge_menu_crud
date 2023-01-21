@@ -1,4 +1,4 @@
-from peewee import Model, SqliteDatabase, TextField
+from peewee import Model, SqliteDatabase, TextField, IntegerField, DecimalField
 
 db = SqliteDatabase('produto.db')
 
@@ -6,8 +6,8 @@ db = SqliteDatabase('produto.db')
 class Produto(Model):
     codigo = TextField()
     nome = TextField()
-    quantidade = TextField()
-    valor = TextField()
+    quantidade = IntegerField()
+    valor = DecimalField()
 
     class Meta:
         database = db

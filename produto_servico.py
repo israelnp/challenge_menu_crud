@@ -16,7 +16,7 @@ class ProdutoServico:
                 "codigo": produto.codigo,
                 "nome": produto.nome,
                 "quantidade": produto.quantidade,
-                "valor": produto.valor
+                "valor": str(produto.valor)
             })
         return produtos
 
@@ -26,7 +26,7 @@ class ProdutoServico:
             "codigo": produto.codigo,
             "nome": produto.nome,
             "quantidade": produto.quantidade,
-            "valor": produto.valor
+            "valor": str(produto.valor)
         }
 
     def atualizar_produto(self, codigo, nome, quantidade, valor):

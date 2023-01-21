@@ -22,8 +22,8 @@ while True:
         print("__________________________________________________\n")
         codigo = input("Qual o código do produto?\t")
         nome = input("Qual o nome do produto?\t")
-        quantidade = input("Qual a quantidade do produto?\t")
-        valor = input("Qual o valor do produto?\t")
+        quantidade = int(input("Qual a quantidade do produto?\t"))
+        valor = float(input("Qual o valor do produto?\t"))
         servico.inserir_produto(codigo, nome, quantidade, valor)
     elif operacao == 2:
         print("----------------Buscar Produtos-------------------")
@@ -31,20 +31,20 @@ while True:
         for produto in servico.buscar_produtos():
             print(produto)
     elif operacao == 3:
-        print("----------Buscar Produto por com Cédigo-----------")
+        print("----------Buscar Produto por Cédigo-----------")
         print("__________________________________________________\n")
         codigo = input("Qual o código do produto?\t")
         print(servico.buscar_produtos_por_codigo(codigo))
     elif operacao == 4:
-        print("----------------Atualizar Produtos----------------")
+        print("----------------Atualizar Produto----------------")
         print("__________________________________________________\n")
         codigo = input("Qual o código do produto?\t")
         nome = input("Qual o nome do produto?\t")
-        quantidade = input("Qual a quantidade do produto?\t")
-        valor = input("Qual o valor do produto?\t")
+        quantidade = int(input("Qual a quantidade do produto?\t"))
+        valor = float(input("Qual o valor do produto?\t"))
         servico.atualizar_produto(codigo, nome, quantidade, valor)
     elif operacao == 5:
-        print("----------------Atualizar Produtos----------------")
+        print("----------------Remover Produto----------------")
         print("__________________________________________________\n")
         codigo = input("Qual o código do produto?\t")
         servico.deletar_produto(codigo)
