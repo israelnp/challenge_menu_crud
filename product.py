@@ -1,4 +1,4 @@
-from peewee import Model, SqliteDatabase, TextField, IntegerField, DecimalField
+from peewee import DecimalField, IntegerField, Model, SqliteDatabase, TextField
 
 db = SqliteDatabase('product.db')
 

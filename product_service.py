@@ -1,3 +1,5 @@
+from pydantic import validate_arguments
+
 from product_repository import ProductRepository
 
 
@@ -6,7 +8,8 @@ class ProductService:
     def __init__(self, respository: ProductRepository):
         self.respository = respository
 
-    def add(self, code, name, amount, price):
+    @validate_arguments
+    def add(self, code: int, name: str, amount: int, price: float):
         self.respository.add(code, name, amount, price)
 
     def get(self):
@@ -20,7 +23,8 @@ class ProductService:
             })
         return produtos
 
-    def get_per_code(self, code):
+    @validate_arguments
+    def get_per_code(self, code: int):
         product = self.respository.get_per_code(code)
         return {
             "code": product.code,
@@ -29,8 +33,10 @@ class ProductService:
             "price": str(product.price)
         }
 
-    def update(self, code, name, amount, price):
+    @validate_arguments
+    def update(self, code: int, name: str, amount: int, price: float):
         self.respository.update(code, name, amount, price)
 
-    def delete(self, code):
+    @validate_arguments
+    def delete(self, code: int):
         self.respository.delete(code)
