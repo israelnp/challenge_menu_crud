@@ -21,10 +21,10 @@ while True:
     if operation == 1:
         print("----------------Add Product-------------------")
         print("__________________________________________________\n")
-        code = int(input("What is the product code?\t"))
+        code = input("What is the product code?\t")
         name = input("What is the product name?\t")
-        amount = int(input("What is the amount of the product?\t"))
-        price = float(input("What is the price of the product?\t"))
+        amount = input("What is the amount of the product?\t")
+        price = input("What is the price of the product?\t")
         try:
             service.add(code, name, amount, price)
         except ValidationError as exc:
@@ -37,7 +37,7 @@ while True:
     elif operation == 3:
         print("----------Get Product per Code-----------")
         print("__________________________________________________\n")
-        code = int(input("What is the product code?\t"))
+        code = input("What is the product code?\t")
         try:
             print(service.get_per_code(code))
         except ValidationError as exc:
@@ -46,10 +46,10 @@ while True:
     elif operation == 4:
         print("----------------Update Product----------------")
         print("__________________________________________________\n")
-        code = int(input("What is the product code?\t"))
+        code = input("What is the product code?\t")
         name = input("What is the product name?\t")
-        amount = int(input("What is the amount of the product?\t"))
-        price = float(input("What is the price of the product?\t"))
+        amount = input("What is the amount of the product?\t")
+        price = input("What is the price of the product?\t")
         try:
             service.update(code, name, amount, price)
         except ValidationError as exc:
@@ -58,7 +58,7 @@ while True:
     elif operation == 5:
         print("----------------Delete Product----------------")
         print("__________________________________________________\n")
-        code = int(input("What is the product code?\t"))
+        code = input("What is the product code?\t")
         try:
             service.delete(code)
         except ValidationError as exc:
